@@ -9,6 +9,8 @@ var time = 15;
 // Establish variable for the clock interval (1 second)
 var intervalId;
 
+$("#clock").css("display", "none");
+
 // When user clicks on start, function "run" will start.
 $("#start").on("click", run);
 
@@ -16,6 +18,7 @@ function run() {
     // Displays the questions:
     // Hide all questions until they get prompted later.
     $("#text").css("display", "inline");
+    $("#clock").css("display", "inline");
     $("#number2").css("display", "none");
     $("#number3").css("display", "none");
     $("#number4").css("display", "none");
@@ -39,6 +42,7 @@ function decrement() {
 };
 
 function nextQuestion() {
+    $("#clock").html("<h2>Time remaining: 15</h2>")
     $("#clock").css("display", "inline");
     $("#resultImage").css("display", "none");
     $("#result").css("display", "none");
